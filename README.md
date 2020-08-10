@@ -59,9 +59,9 @@ contribute to other ski lovers travel choises.
 ## Wireframes
 I used [Balsamiq Wireframes](https://balsamiq.com/) to build rudimentary wireframes for a basic understanding.
 I have made frames for desktop, tablet and mobile:
-![Wireframe for Desktop](assets/wireframes/wireframe-desktop.pdf)
-![Wireframe for Tablet](assets/wireframes/wireframe-tablet.pdf)
-![Wireframe for Mobile](assets/wireframes/wireframe-mobile.pdf)
+- [Wireframe for Desktop](https://github.com/Carina-P/Skiers-Paradise/blob/master/assets/wireframes/wireframe-desktop.pdf)
+- [Wireframe for Tablet](https://github.com/Carina-P/Skiers-Paradise/blob/master/assets/wireframes/wireframe-tablet.pdf)
+- [Wireframe for Mobile](https://github.com/Carina-P/Skiers-Paradise/blob/master/assets/wireframes/wireframe-mobile.pdf)
 
 ### Major changes compared to above wireframes
 
