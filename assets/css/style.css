@@ -1,14 +1,39 @@
 /* Import fonts from Google Fonts: https://fonts.google.com/ */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Varela:wqht@300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+sans&family=Varela:wqht@300;400;600;700;800&display=swap');
 
+/* General */
 html{
     scroll-behavior: smooth;
     font-size: 62,5%;
 }
 
 body{
-    font-family: "Varela", "Montserrat";
+    font-family: "Varela", sans-serif;
     color: #262730;
     font-size: 1.6rem;
+}
+
+/* Header */
+.logo{
+    height: 4rem;
+    width: 7rem;
+    border: solid .3rem #cae9ff;
+    border-radius: 50%;    
+}
+
+.navbar-toggler{
+    background-color: #fecf3e;
+    color: #262730;
+}
+
+.nav-link{
+    color: #262730;
+}
+.nav-link:hover{
+    color:#262730;
+    font-weight: 700;
+}
+.navbar-brand:hover, .navbar-toggler:hover{
+    transform: scale(1.1);
 }
 
