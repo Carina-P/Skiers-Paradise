@@ -22,6 +22,26 @@ To **share information** with other ski lovers in the club and also **find new s
 In the long run **advertisers** will get the opportunity to put adds in the site. In this way the club can **earn money** and get **partners** 
 and **sponsors**. 
 
+### Potential features, grouping of the features and in order of prioritize
+- **Header**, fixed at the top of viewport, with:
+    - **logo**
+    - **navbar**
+- **Information**-section with:
+    - **Map** with with labels on skiing resorts.
+    - **Skiing-resort information** matching the label user has **choosen in map**.
+- **Trip**-section with:
+    - **Information** about the yearly skitrip
+    - **Sign up -form** for the skiing-trip
+- **Recommendation**-section with:
+    - **Table with 10-top** skiing resort sorted with the best in the top. Providing possibility to do users own ranking of place and
+interactive update of the list.
+    - **Reviews** of ski resorts
+- **About** -section with:
+    - Information on **the Skiers Paradise club**
+- **Footer**-section with:
+    - The clubs **contact and social media** information
+
+
 ### User stories 
 - As a user I want to know where good skiing places are situated on a **map**.
 - As a user I want to find up-to-date **information and facts** about downhill skiing places, to be able to choose where I am going
@@ -92,6 +112,7 @@ I want the colors to match a day in the skiing slope: White for **snow**, light-
 interactive update of the list.
 - **Reviews** of ski resorts
 - **About** the Skiers Paradise club
+- **Footer** with contacts and social media
 
 <!--
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
