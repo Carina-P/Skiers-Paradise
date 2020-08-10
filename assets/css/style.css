@@ -1,0 +1,14 @@
+/* Import fonts from Google Fonts: https://fonts.google.com/ */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Varela:wqht@300;400;600;700;800&display=swap');
+
+html{
+    scroll-behavior: smooth;
+    font-size: 62,5%;
+}
+
+body{
+    font-family: "Varela", "Montserrat";
+    color: #262730;
+    font-size: 1.6rem;
+}
+
