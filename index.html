@@ -3,32 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <title>Skiers Paradise</title>
 </head>
 <body>
 <!-- Navigation-->
     <header>
-    
-
+        <nav class="navbar navbar-expand-md ml-auto navbar-light">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logo-skiers-paradise.png" width="70" height="40" class="d-inline-block align-top" alt="logo" loading ="lazy">
+                Skiers Paradise
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#places">Places <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#join">Sign up for skiing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#recommend">10-top and Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About our Club</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
 <!-- Skiing places-section with map and information ------------------->
-    <section>
+    <section id="places">
     Map and information about ski resorts
     </section>
 
 <!-- Trip-section with this years trip and sign up -------------------->
-    <section> 
+    <section id="join"> 
     Next years skiing trip information and a form to sign up
     </section>
 
 <!-- Top-places-section with 10-top list and reviews------------------->
-    <section>
+    <section id="recommend">
     recommendations for skiing with 10-top-list and reviews
     </section>
 
 <!-- About the club-section ------------------------------------------->
-    <section>
+    <section id="about">
     About the club    
     </section>
 
