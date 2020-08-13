@@ -1,5 +1,5 @@
 /* Import fonts from Google Fonts: https://fonts.google.com/ */
-@import url('https://fonts.googleapis.com/css2?family=Open+sans&family=Varela:wqht@300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+sans&family=Varela&display=swap');
 
 /* General */
 html{
@@ -13,6 +13,12 @@ body{
     font-size: 1.6rem;
 }
 
+#places {
+    min-height: 100vh;
+}
+#places>.row {
+    border: solid .3rem #cae9ff;
+}
 /* Header */
 .logo{
     height: 4rem;
