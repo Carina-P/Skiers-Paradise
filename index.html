@@ -11,7 +11,7 @@
 <body>
 <!-- Navigation-->
     <header>
-        <nav class="navbar navbar-expand-md ml-auto">
+        <nav class="navbar navbar-expand-md">
             <a href ="#" class="navbar-brand" aria-label="Navigate to top">
                 <img src="assets/img/logo-skiers-paradise.png" class="logo d-inline-block align-top" alt="logo">
             </a>
@@ -44,8 +44,14 @@
 <!-- Skiing places-section with map and information ------------------->
     <section id="places" class = "container-fluid">
         <div class ="row">
-            <div id="map" class = "col-12 col-md-8 no-gutters"></div>
-            <div class ="col-12 col-md-4">Information about Ski resort <br> höjd över havet <br> off-pist-paradise <br> och så vidare </div>
+            <div id="map" class = "col-12 col-md-8"></div>
+            <div id="place-info" class ="col-12 col-md-4 d-flex p-5">
+                <div id ="place-txt" class="align-self-center p-2">
+                    <h2><strong>Click on marker</strong> in the map:</2> 
+                    <p>Information about a Ski Resort will appear here.<br>
+                    And <strong>short information</strong> appears close to the marker. </p>
+                </div>
+            </div>
         </div>
     </section>
 

@@ -44,7 +44,17 @@ body{
 }
 
 #map{
-    min-height : 370px;
-    height : 70vh;
+    min-height : 370px; 
+    height: 70vh;
     width : 100%;
+}
+
+#place-info{ 
+    max-height: 70vh;
+}
+
+#place-txt{
+    background-color:  #cae9ff;
+    max-height: 100%;
+    overflow: auto;
 }
