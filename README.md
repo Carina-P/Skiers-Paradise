@@ -2,7 +2,7 @@
 ![Logo](assets/wireframes/logo-skiers-paradise.png)
 *(Above logo is under construction.)*
 
-Ski lovers **share information** about the **best downhill Ski places in the world**, to inspire each other but also everyone else who want **to find their own Skiers Paradise**.
+**UpToDate information about Ski Resorts** for downhill ski lovers who are searching for their next ski trip or just want updated information about skiing conditions.
  
 ## UX
 <!--
@@ -14,13 +14,12 @@ In particular, as part of this section we recommend that you provide a list of U
 This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
 -->
 ### External users goal
-A place to find (and in the future also share) **information and up-to-date facts** about the **best downhill ski places in the world**. 
-And also being able to **join Skiing-journeys with other ski lovers**.
+A place to find **information and up-to-date facts** about the **best downhill ski places in the world**. This is the site where you find **inspiration** if you do not know
+**which ski resort to choose**. And the site to find update information when you are or are going to a ski resort.
 
 ### Site owners goal
-To **share information** with other ski lovers in the club and also **find new skiing friends** on the travels they arrange.
-In the long run **advertisers** will get the opportunity to put adds in the site. In this way the club can **earn money** and get **partners** 
-and **sponsors**. 
+To **share information** with other ski lovers and get uptodate information about skiing conditions at the best downhill skiing resorts.
+In the long run **advertisers** will get the opportunity to put adds in the site.
 
 ### Potential features, grouping of the features and in order of prioritize
 - **Header**, fixed at the top of viewport, with:
@@ -29,43 +28,36 @@ and **sponsors**.
 - **Information**-section with:
     - **Map** with with labels on skiing resorts.
     - **Skiing-resort information** matching the label user has **choosen in map**.
-- **Trip**-section with:
-    - **Information** about the yearly skitrip
-    - **Sign up -form** for the skiing-trip
 - **Recommendation**-section with:
-    - **Table with 10-top** skiing resort sorted with the best in the top. Providing possibility to do users own ranking of place and
-interactive update of the list.
+    - **Table with 10-top** skiing resort sorted with the best in the top. Providing possibility to do own ranking of place and
+**interactive update** of the list.
     - **Reviews** of ski resorts
-- **About** -section with:
-    - Information on **the Skiers Paradise club**
+- Section for **wishes** were you can **mail** a wish for a **ski resort** that you want the site to show information about.
 - **Footer**-section with:
-    - The clubs **contact and social media** information
+    - **contact and social media** information
 
 
 ### User stories 
 - As a user I want to know where good skiing places are situated on a **map**.
 - As a user I want to find up-to-date **information and facts** about downhill skiing places, to be able to choose where I am going
-on my next ski trip and/or get up-date-information, as wheather, at the place I am going to.
-- Aa a user I want to find **information** about the clubs **yearly skiing-trip**.
-- As a user I want to **sign up** for the club's yearly **skiing-trip**, so I can join the trip and go skiing with other ski lovers.
+on my next ski trip and/or get up-date-information, as skiing- and wheather-conditions, at the place I am going to.
 - As a user I want to see **which skiing places are most popular** according to the club and the sites visitors, so I am inspired when 
 I think of my next trip.
-- As a user I want to be able to **grade the different skiing places**, and interactively how my vote affects the 10-top-list. So I can
+- As a user I want to be able to **grade the different skiing places**, and interactively see how my vote affects the 10-top-list. So I can
 contribute to other ski lovers travel choises.
 - As a user I want to see **reviews** of different places, so I get inspired for my next skiing-trip.
-- As a user I want **information about the club**, so I know that the information I receive is serious.
+- As a user I want to be able to **influence which ski resorts** are showing on the site.
 
 ## User requirements and Expectations
 
 ### Requirements
 - Navigate the website using **navbar**
-- Based on a **map** find **information** about different ski resort.
-- Get **information** about this years **skiing-trip** with the club.
-- **Sign up for the skiing-trip** and give information as full name, email-adress, telephone-number, skiing-level and voluntary text.
-- An updated list of the 10 most popular ski-resorts with name of the place and ranking.
+- Originate from the **map**: find **information** about different ski resort.
+- An **updated list** of the 10 most popular ski-resorts with name of the place, ranking and grade. **Grade is calculated** from users input.
 - Possibility to give the ski-resorts **own grade** and the 10-top-list is updated accordingly.
 - See **reviews** on ski resorts, from other skiiers.
-- Short information **about the club**
+- Possitbility to **mail wishes** for other Ski Resorts to be shown on the site. The input should include name, mailadress, name of ski resort and reason to 
+choose the resort.
 
 ### Expectations
 - Content is **visually satisfying and informative**
@@ -73,7 +65,7 @@ contribute to other ski lovers travel choises.
 - **Links and buttons** work as espected
 - **Responsive design** fitting on mobile, tablet and desktop
 - **Form validation** works correctly
-- **New rating is correctly calculated** after user graded a ski resort.
+- **New grade is correctly calculated** after user graded a ski resort.
 - **Updating of 10-top-list** works after user grading.
 
 ## Wireframes
@@ -101,17 +93,16 @@ I want the colors to match a day in the skiing slope: White for **snow**, light-
 - Details to **stick out** as buttons: **Sunglow** #fecf3e
 
 ## Features
+In order of importance:
 - **Header**, fixed at the top of viewport, with:
     - **logo**
     - **navbar**
-- **Map** with with labels at skiing resorts.
-- **Skiing-resort information** matching the label user has **choosen in map**.
-- **Skiing-trip** information
-- **Sign up -form** for the skiing-trip
+- **Map** with with markers on popular skiing resorts.
+- **Skiing-resort information** matching the marker user has **choosen in map**.
 - **Table with 10-top** skiing resort sorted with the best in the top. Providing possibility to do users own ranking of place and
 interactive update of the list.
 - **Reviews** of ski resorts
-- **About** the Skiers Paradise club
+- **Form for wishing** new ski resorts on the site.
 - **Footer** with contacts and social media
 
 <!--
