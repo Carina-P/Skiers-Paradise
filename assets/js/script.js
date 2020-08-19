@@ -20,7 +20,7 @@ function initMap(){
     ]
 
     let markers = locations.map(function(location, i) {
-          return new google.maps.Marker({ position: location});
+          return new google.maps.Marker({ position: location, icon:"assets/img/yellow-marker48.gif"});
         });
         
     let markerCluster = new MarkerClusterer(map, markers, {imagePath: 'assets/img/m'});

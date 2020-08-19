@@ -79,8 +79,10 @@ I have made frames for desktop, tablet and mobile:
 
 ## Design Choices
 ### Fonts
-I have choosen **Varela**, because i find it **modern** and stylish but also **clean** and easy to read. "Because it is extremely clean and minimalistic in design, it is able to sit well in body text at small sizes, 
-or be used for headlines and menu items." (quote from https://fonts.google.com/specimen/Varela#standard-styles). And as the alternative: Montserrat.
+I have choosen **Oswald**, because i find it very **useful** on different platforms, **clean** and **easy** to read. "Oswald is designed 
+to be used freely across the internet by web browsers on desktop computers, laptops and mobile devices." (quote from 
+[Google fonts](https://fonts.google.com/specimen/Oswald#standard-styles). 
+And as the alternative font: Open Sans.
 ### Icons
 
 ### Colors
