@@ -1,5 +1,5 @@
 /* Import fonts from Google Fonts: https://fonts.google.com/ */
-@import url('https://fonts.googleapis.com/css2?family=Open+sans&family=Varela&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+sans&family=Oswald&display=swap');
 
 /* General */
 html{
@@ -58,3 +58,10 @@ body{
     max-height: 100%;
     overflow: auto;
 }
+.flex-container {
+    display: flex;
+}
+.forecast {
+    padding: .5rem;
+}
+

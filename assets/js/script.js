@@ -50,6 +50,32 @@ function buildPlaces(){
     return places;
 }
 
+function fetchInfo(place){
+    return `<h2>Val Thorens</h2>
+        <p>Europe's highest situated ski resort and part of the world's largest contiguous ski area, "les Trois Vallées".</p>
+        <h3>Snow Report</h3>
+        <p><small>New snow:</small> 4 cm<br>
+        <small>Last snow:</small> 19/05/2020<br>
+        <small>Runs open:</small> 50%<br>
+        <small>Snow report:</small> Closed for snowsports </p>
+        <h3>Forecast at top</h3>
+        <div class = "flex-container">
+            <div class = "forecast"> 
+                10:00<br>
+                <img src="assets/img/weather/Sunny.gif"> <br>
+                -3&#8451<br>
+                3 m/s
+            </div>   
+            <div class ="forecast"> 
+                14:00<br>
+                <img src="assets/img/weather/Sunny.gif"> <br>
+                0&#8451<br>
+                6 m/s
+            </div>   
+        </div>
+        <div><br><a href="https://www.valthorens.com/en/ target=_blank"">More info</a></div>`;
+}
+
 function buildMarkers(map){
     let markers = [];
 
@@ -65,6 +91,8 @@ function buildMarkers(map){
         var marker = new google.maps.Marker({position: place.position ,icon:"assets/img/yellow-marker48.gif"});
         marker.addListener("click", function(){
             infoWindow.open(map, marker);
+            $("#place-txt").css("background-color","#ffffff");
+            $("#place-txt").html(fetchInfo(place));
         });
     
         markers.push(marker);
