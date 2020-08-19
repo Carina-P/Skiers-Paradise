@@ -27,16 +27,49 @@ function initMap(){
     
 }
 
+function buildPlaces(){
+    let places =[
+        {
+            name: "Val Thorens",
+            position : {lat: 45.297309, lng: 6.579732},
+            altitudeB: "2 300 m",
+            altitudeT: "3 230 m",
+            pists: "335 /600 km",
+            nrLifts: 183
+        },
+        {
+            name: "Verbier",
+            position : {lat: 46.096081, lng: 7.228551},
+            altitudeB: 1503,
+            altitudeT: 3330 ,
+            pists: "412 km",
+            nrLifts: 67
+        }
+    ];
+
+    return places;
+}
+
 function buildMarkers(map){
     let markers = [];
-    var windowContent = "<p><strong>Val Thorens</strong><br> Altitude base: 2 300 m <br>Altitude highets slope: 3 230 m <br>Number of slopes: 335/ 600 km<br>Number of lifts: 183</p>";
-    var infoWindow = new google.maps.InfoWindow({content: windowContent});
+
+    let places = buildPlaces();
+
+    places.forEach(function(place){
+        var windowContent = "<p><strong>" + place.name + "</strong><br> Altitude base: " +
+        place.altitudeB + "<br>Altitude top: " + place.altitudeT +"<br>Slopes: " + place.pists +
+        "<br>Number of lifts: " + place.nrLifts + "</p>";
+
+        var infoWindow = new google.maps.InfoWindow({content: windowContent});
     
-    var marker = new google.maps.Marker({position: {lat: 45.297309, lng: 6.579732},icon:"assets/img/yellow-marker48.gif"});
-    marker.addListener("click", function(){
-        infoWindow.open(map, marker);
-    });
-    markers.push(marker);
+        var marker = new google.maps.Marker({position: place.position ,icon:"assets/img/yellow-marker48.gif"});
+        marker.addListener("click", function(){
+            infoWindow.open(map, marker);
+        });
+    
+        markers.push(marker);
+    })
+    
 
     return markers;
 }
