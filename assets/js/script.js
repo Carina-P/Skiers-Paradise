@@ -5,7 +5,7 @@ function initMap(){
             center: {lat: 46.619261, lng: -33.134766}
         }
     );
-
+/*
     var locations = [
         {lat: 45.297309, lng: 6.579732},
         {lat: 45.448034, lng: 6.980226},
@@ -22,7 +22,21 @@ function initMap(){
     let markers = locations.map(function(location, i) {
           return new google.maps.Marker({ position: location, icon:"assets/img/yellow-marker48.gif"});
         });
-        
-    let markerCluster = new MarkerClusterer(map, markers, {imagePath: 'assets/img/m'});
+  */      
+    let markerCluster = new MarkerClusterer(map, buildMarkers(map), {imagePath: 'assets/img/m'});
     
+}
+
+function buildMarkers(map){
+    let markers = [];
+    var windowContent = "<p><strong>Val Thorens</strong><br> Altitude base: 2 300 m <br>Altitude highets slope: 3 230 m <br>Number of slopes: 335/ 600 km<br>Number of lifts: 183</p>";
+    var infoWindow = new google.maps.InfoWindow({content: windowContent});
+    
+    var marker = new google.maps.Marker({position: {lat: 45.297309, lng: 6.579732},icon:"assets/img/yellow-marker48.gif"});
+    marker.addListener("click", function(){
+        infoWindow.open(map, marker);
+    });
+    markers.push(marker);
+
+    return markers;
 }
