@@ -28,8 +28,8 @@ function initMap(){
 }
 
 function buildPlaces(){
-    let places = [
-        {
+    let places = {
+        valThorens : {
             name: "Val Thorens",
             info: "Europe's highest situated ski resort and part of the world's largest contiguous ski area, les Trois Vallées",
             position: {lat: 45.297309, lng: 6.579732},
@@ -37,8 +37,8 @@ function buildPlaces(){
             altitudeT: "3 230 m",
             pists: "335 /600 km",
             nrLifts: 183
-        },
-        {
+            },
+        Verbier : {
             name: "Verbier",
             info: "A giant ski area that delivers some of the world's best off-piste skiing in combination with luxury and flair in a cosmopolitan mountain village.",
             position: {lat: 46.096081, lng: 7.228551},
@@ -66,34 +66,35 @@ function buildPlaces(){
             windspeed_avg3: 3,
             weather3: "Partly cloudy",
             weather_icon3: "PartlyCloudyNight.gif"
-        }
-    ];
+            }
+    };
     
     /* Val Thorens */
     $.when(
         $.getJSON("https://api.weatherunlocked.com/api/snowreport/333020?app_id=754144cc&app_key=108769d13601e41f8dfeb934ee961859"),
         $.getJSON("https://api.weatherunlocked.com/api/resortforecast/333020?hourly_interval=6&app_id=754144cc&app_key=108769d13601e41f8dfeb934ee961859")
     ).then( function(snowreport, weather){
-            places[0].newsnow = snowreport[0].newsnow_cm;
-            places[0].lastsnow = snowreport[0].lastsnow;
-            places[0].conditions = snowreport[0].conditions;
-            places[0].runs_open = snowreport[0].pctopen;
-            places[0].date = weather[0].forecast[1].date;
-            places[0].time1 = weather[0].forecast[1].time;
-            places[0].temp_avg1 = weather[0].forecast[1].upper.temp_avg_c;
-            places[0].windspeed_avg1 = weather[0].forecast[1].upper.windspd_avg_ms;
-            places[0].weather1 = weather[0].forecast[1].upper.wx_desc;
-            places[0].weather_icon1 = weather[0].forecast[1].upper.wx_icon;
-            places[0].time2 = weather[0].forecast[2].time;
-            places[0].temp_avg2 = weather[0].forecast[2].upper.temp_avg_c;
-            places[0].windspeed_avg2 = weather[0].forecast[2].upper.windspd_avg_ms;
-            places[0].weather2 = weather[0].forecast[2].upper.wx_desc;
-            places[0].weather_icon2 = weather[0].forecast[2].upper.wx_icon;
-            places[0].time3 = weather[0].forecast[3].time;
-            places[0].temp_avg3 = weather[0].forecast[3].upper.temp_avg_c;
-            places[0].windspeed_avg3 = weather[0].forecast[3].upper.windspd_avg_ms;
-            places[0].weather3 = weather[0].forecast[3].upper.wx_desc;
-            places[0].weather_icon3 = weather[0].forecast[3].upper.wx_icon;
+            places.valThorens.newsnow = snowreport[0].newsnow_cm;
+            places.valThorens.lastsnow = snowreport[0].lastsnow;
+            places.conditions = snowreport[0].conditions;
+            places.valThorens.conditions = snowreport[0].conditions;
+            places.valThorens.runs_open = snowreport[0].pctopen;
+            places.valThorens.date = weather[0].forecast[1].date;
+            places.valThorens.time1 = weather[0].forecast[1].time;
+            places.valThorens.temp_avg1 = weather[0].forecast[1].upper.temp_avg_c;
+            places.valThorens.windspeed_avg1 = weather[0].forecast[1].upper.windspd_avg_ms;
+            places.valThorens.weather1 = weather[0].forecast[1].upper.wx_desc;
+            places.valThorens.weather_icon1 = weather[0].forecast[1].upper.wx_icon;
+            places.valThorens.time2 = weather[0].forecast[2].time;
+            places.valThorens.temp_avg2 = weather[0].forecast[2].upper.temp_avg_c;
+            places.valThorens.windspeed_avg2 = weather[0].forecast[2].upper.windspd_avg_ms;
+            places.valThorens.weather2 = weather[0].forecast[2].upper.wx_desc;
+            places.valThorens.weather_icon2 = weather[0].forecast[2].upper.wx_icon;
+            places.valThorens.time3 = weather[0].forecast[3].time;
+            places.valThorens.temp_avg3 = weather[0].forecast[3].upper.temp_avg_c;
+            places.valThorens.windspeed_avg3 = weather[0].forecast[3].upper.windspd_avg_ms;
+            places.valThorens.weather3 = weather[0].forecast[3].upper.wx_desc;
+            places.valThorens.weather_icon3 = weather[0].forecast[3].upper.wx_icon;
             console.log(weather);
         },
         function(error){
@@ -146,8 +147,9 @@ function buildMarkers(map){
 
     let places = buildPlaces();
 
-    places.forEach(function(place){
+    Object.values(places).forEach(function(place){
         console.log(place.position);
+        place
         var windowContent = "<p><strong>" + place.name + "</strong><br> Altitude base: " +
         place.altitudeB + "<br>Altitude top: " + place.altitudeT +"<br>Slopes: " + place.pists +
         "<br>Number of lifts: " + place.nrLifts + "</p>";
@@ -164,6 +166,5 @@ function buildMarkers(map){
         markers.push(marker);
     })
     
-
     return markers;
 }
