@@ -16,8 +16,10 @@ body{
 #places {
     min-height: 100vh;
 }
-#places>.row {
+.border-blue{
     border: solid .3rem #cae9ff;
+    margin: 1rem;
+    border-radius: 1rem;
 }
 /* Header */
 .logo{
@@ -42,6 +44,10 @@ body{
 .navbar-brand:hover, .navbar-toggler:hover{
     transform: scale(1.1);
 }
+.text-center{
+  text-align: center;
+  padding: 1rem;
+}
 
 #map{
     min-height : 370px; 
@@ -64,4 +70,5 @@ body{
 .forecast {
     padding: .5rem;
 }
+
 

@@ -1,0 +1,60 @@
+[
+   {    
+       "id" : 333020,
+        "name" :"Val Thorens",
+        "info": "Europe's highest situated ski resort and part of the world's largest contiguous ski area, les Trois Vallées",
+        "position": {"lat": 45.297309, "lng": 6.579732},
+        "altitudeB": "2 300 m",
+        "altitudeT": "3 230 m",
+        "pists": "335 /600 km",
+        "nrLifts": 183     
+        
+   },
+   {
+        "id" : 13034, 
+        "name": "Verbier",
+        "info": "A giant ski area that delivers some of the world's best off-piste skiing in combination with luxury and flair in a cosmopolitan mountain village.",
+        "position": {"lat": 46.096081, "lng": 7.228551},
+        "altitudeB": "1 503 m",
+        "altitudeT": "3 330 m" ,
+        "pists": "412 km",
+        "nrLifts": 67,
+        "snowreport" : {
+            "newsnow" : "20 cm",
+            "lastsnow": "19/05/2020",
+            "conditions": "Great ski conditions",
+            "runs_open": 25
+        },
+        "forecast" : [
+            {},
+            {
+                "date": "19/08/2020",
+                "time": "07:00",
+                "upper" : {
+                    "temp_avg_c": 10,
+                    "windspd_avg_ms": 3,
+                    "wx_desc": "Partly cloudy",
+                    "weather_icon": "PartlyCloudyDay.gif"
+                } 
+            },
+            {
+                "time": "13:00",
+                 "upper" : {
+                    "temp_avg_c": 10,
+                    "windspeed_avg_ms": 3,
+                    "wx_desc": "Sunny",
+                    "wx_icon": "Sunny.gif"
+                }
+            },    
+            {
+                "time": "19:00",
+                "upper" : {
+                    "temp_avg_c": 10,
+                    "windspeed_avg_ms" : 3,
+                    "wx_desc": "Partly cloudy",
+                    "wx_icon": "PartlyCloudyNight.gif"
+                } 
+            }   
+        ]
+   }
+]

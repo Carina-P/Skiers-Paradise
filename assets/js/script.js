@@ -23,11 +23,12 @@ function initMap(){
           return new google.maps.Marker({ position: location, icon:"assets/img/yellow-marker48.gif"});
         });
   */      
-    let markerCluster = new MarkerClusterer(map, buildMarkers(map), {imagePath: 'assets/img/m'});
+    let markerCluster = new MarkerClusterer(map, getMarkers(map), {imagePath: 'assets/img/m'});
     
 }
 
-function buildPlaces(){
+function getResortsInfo(){
+    /*
     let places = {
         valThorens : {
             name: "Val Thorens",
@@ -68,49 +69,87 @@ function buildPlaces(){
             weather_icon3: "PartlyCloudyNight.gif"
             }
     };
-    
-    /* Val Thorens */
-    $.when(
-        $.getJSON("https://api.weatherunlocked.com/api/snowreport/333020?app_id=754144cc&app_key=108769d13601e41f8dfeb934ee961859"),
-        $.getJSON("https://api.weatherunlocked.com/api/resortforecast/333020?hourly_interval=6&app_id=754144cc&app_key=108769d13601e41f8dfeb934ee961859")
-    ).then( function(snowreport, weather){
-            places.valThorens.newsnow = snowreport[0].newsnow_cm;
-            places.valThorens.lastsnow = snowreport[0].lastsnow;
-            places.conditions = snowreport[0].conditions;
-            places.valThorens.conditions = snowreport[0].conditions;
-            places.valThorens.runs_open = snowreport[0].pctopen;
-            places.valThorens.date = weather[0].forecast[1].date;
-            places.valThorens.time1 = weather[0].forecast[1].time;
-            places.valThorens.temp_avg1 = weather[0].forecast[1].upper.temp_avg_c;
-            places.valThorens.windspeed_avg1 = weather[0].forecast[1].upper.windspd_avg_ms;
-            places.valThorens.weather1 = weather[0].forecast[1].upper.wx_desc;
-            places.valThorens.weather_icon1 = weather[0].forecast[1].upper.wx_icon;
-            places.valThorens.time2 = weather[0].forecast[2].time;
-            places.valThorens.temp_avg2 = weather[0].forecast[2].upper.temp_avg_c;
-            places.valThorens.windspeed_avg2 = weather[0].forecast[2].upper.windspd_avg_ms;
-            places.valThorens.weather2 = weather[0].forecast[2].upper.wx_desc;
-            places.valThorens.weather_icon2 = weather[0].forecast[2].upper.wx_icon;
-            places.valThorens.time3 = weather[0].forecast[3].time;
-            places.valThorens.temp_avg3 = weather[0].forecast[3].upper.temp_avg_c;
-            places.valThorens.windspeed_avg3 = weather[0].forecast[3].upper.windspd_avg_ms;
-            places.valThorens.weather3 = weather[0].forecast[3].upper.wx_desc;
-            places.valThorens.weather_icon3 = weather[0].forecast[3].upper.wx_icon;
-            console.log(weather);
+    */
+    let resorts = [];
+     
+    $.getJSON("assets/data/resorts.json")
+    .then( function (data){
+            data.forEach( function(resort){
+                if(resort.id == 333020){
+                    $.when(
+                        $.getJSON(`https://api.weatherunlocked.com/api/snowreport/${resort.id}?app_id=754144cc&app_key=108769d13601e41f8dfeb934ee961859`),
+                        $.getJSON(`https://api.weatherunlocked.com/api/resortforecast/${resort.id}?hourly_interval=6&app_id=754144cc&app_key=108769d13601e41f8dfeb934ee961859`))
+                    .then( function(snowreport, weather) {
+                            resort.snowreport = snowreport[0];
+                            resort.weather = weather[0];
+                            resorts.push(
+                                {
+                                    positon : resort.position,
+                                    infoHTML : resortInfoToHTML(resort)
+                                }
+                            );
+                            console.log(resorts.length + "push Val Thorens")
+                            /*places.ValThorens.snowreport = snowreport[0];
+                            places.valThorens.weather = weather[0].forecast;
+                            places.valThorens.newsnow = snowreport[0].newsnow_cm;
+                            places.valThorens.lastsnow = snowreport[0].lastsnow;
+                            places.conditions = snowreport[0].conditions;
+                            places.valThorens.conditions = snowreport[0].conditions;
+                            places.valThorens.runs_open = snowreport[0].pctopen;
+                            places.valThorens.date = weather[0].forecast[1].date;
+                            places.valThorens.time1 = weather[0].forecast[1].time;
+                            places.valThorens.temp_avg1 = weather[0].forecast[1].upper.temp_avg_c;
+                            places.valThorens.windspeed_avg1 = weather[0].forecast[1].upper.windspd_avg_ms;
+                            places.valThorens.weather1 = weather[0].forecast[1].upper.wx_desc;
+                            places.valThorens.weather_icon1 = weather[0].forecast[1].upper.wx_icon;
+                            places.valThorens.time2 = weather[0].forecast[2].time;
+                            places.valThorens.temp_avg2 = weather[0].forecast[2].upper.temp_avg_c;
+                            places.valThorens.windspeed_avg2 = weather[0].forecast[2].upper.windspd_avg_ms;
+                            places.valThorens.weather2 = weather[0].forecast[2].upper.wx_desc;
+                            places.valThorens.weather_icon2 = weather[0].forecast[2].upper.wx_icon;
+                            places.valThorens.time3 = weather[0].forecast[3].time;
+                            places.valThorens.temp_avg3 = weather[0].forecast[3].upper.temp_avg_c;
+                            places.valThorens.windspeed_avg3 = weather[0].forecast[3].upper.windspd_avg_ms;
+                            places.valThorens.weather3 = weather[0].forecast[3].upper.wx_desc;
+                            places.valThorens.weather_icon3 = weather[0].forecast[3].upper.wx_icon;
+                            */
+                        },
+                        function(error){
+                            console.log(error);
+                        }
+                    );
+                }
+                else{
+                    resorts.push(
+                        {
+                            positon : resort.position,
+                            infoHTML : resortInfoToHTML(resort)
+                        }
+                    );
+                }
+            });
         },
         function(error){
             console.log(error);
         }
     );
 
-    return places;
+    return resorts;
 }
 
-function fetchInfo(place){
-    return `<h2>${place.name}</h2>
-        <p>${place.info}</p>
+
+function resortInfoToHTML(resort){
+    
+    return { windowContent : `<p><strong>${resort.name}</strong><br> Altitude base:
+                ${resort.altitudeB}<br>Altitude top:${resort.altitudeT}<br>Slopes: ${resort.pists}
+                <br>Number of lifts: ${resort.nrLifts} </p>`,
+            txtContent :    `<h2>${resort.name}</h2>
+                            <p>${resort.info}</p>`
+            }; 
+    /*
         <div>
             <h3>Forecast at top</h3>
-            ${place.date}
+            ${resort.date}
             <div class = "flex-container">
                 <div class = "forecast"> 
                     ${place.time1}<br>
@@ -140,16 +179,32 @@ function fetchInfo(place){
             <small>Snow report:</small> ${place.conditions} </p>
         </div>
         <div><br><a href="https://www.valthorens.com/en/" target="_blank">More info</a></div>`;
+        */
 }
 
-function buildMarkers(map){
+function getMarkers(map){
     let markers = [];
 
-    let places = buildPlaces();
+    let resorts = getResortsInfo();
+    console.log(resorts.length +"getMarkers");
 
-    Object.values(places).forEach(function(place){
-        console.log(place.position);
-        place
+    resorts.forEach(function(resort){
+        var infoWindow = new google.maps.InfoWindow({content: resort.infoHTML.windowContent});
+        console.log("windowContnet" + resort.infoHTML.windowContent);
+        var marker = new google.maps.Marker({position: resort.position, map: map, icon:"assets/img/yellow-marker48.gif"});
+   
+        marker.addListener("click", function(){
+            infoWindow.open(map, marker);
+            $("#place-txt").css("background-color","#ffffff");
+            $("#place-txt").html(resort.infoHTML.txtContent);
+            console.log("txtContent" + resort.infoHTML.txtContent);
+        });
+    
+        markers.push(marker);
+
+    });
+    /*
+    Object.values(places).forEach(function(place){ 
         var windowContent = "<p><strong>" + place.name + "</strong><br> Altitude base: " +
         place.altitudeB + "<br>Altitude top: " + place.altitudeT +"<br>Slopes: " + place.pists +
         "<br>Number of lifts: " + place.nrLifts + "</p>";
@@ -165,6 +220,6 @@ function buildMarkers(map){
     
         markers.push(marker);
     })
-    
+    */
     return markers;
 }
