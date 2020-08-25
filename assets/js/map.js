@@ -25,6 +25,9 @@ function buildMarker(resort){
 }
 
 function getResortInfo(resort) {
+    /* let snowRep;
+    let weatherRep;
+    */
     
     if(resort.id == 333020){
         fetch(`https://api.weatherunlocked.com/api/snowreport/${resort.id}?app_id=754144cc&app_key=108769d13601e41f8dfeb934ee961859`)
@@ -35,6 +38,7 @@ function getResortInfo(resort) {
             return snowRes.json();
         })
         .then ((snowReport) => {
+            /* snowRep = snowReport; */
             resort.snowReport = snowReport;
             return (fetch(`https://api.weatherunlocked.com/api/resortforecast/${resort.id}?hourly_interval=6&app_id=754144cc&app_key=108769d13601e41f8dfeb934ee961859`))
         })
@@ -45,12 +49,14 @@ function getResortInfo(resort) {
             return weatherRes.json();
         })
         .then ((weather) => {
+            /* weatherRep = weather */
             resort.forecast = weather.forecast;
         })
         .catch((error) => {console.error("error: ", error) });
     }
     
     return buildMarker(resort);
+    /*return buildMarker(resort, snowRep, weatherRep); */
 } 
 
 function makeMarkersCluster(){ 
