@@ -27,33 +27,31 @@ function buildMarker(resort){
 function getResortInfo(resort) {
     /* let snowRep;
     let weatherRep;
-    */
-    
-    if(resort.id == 333020){
-        fetch(`https://api.weatherunlocked.com/api/snowreport/${resort.id}?app_id=754144cc&app_key=108769d13601e41f8dfeb934ee961859`)
-        .then((snowRes) => {
-            if (!snowRes.ok){
-                throw new Error("Something is wrong fetching snowreport");
-            }
-            return snowRes.json();
-        })
-        .then ((snowReport) => {
+    */ 
+    fetch(`https://api.weatherunlocked.com/api/snowreport/${resort.id}?app_id=754144cc&app_key=108769d13601e41f8dfeb934ee961859`)
+    .then((snowRes) => {
+        if (!snowRes.ok){
+            throw new Error("Something is wrong fetching snowreport");
+        }
+        return snowRes.json();
+    })
+    .then ((snowReport) => {
             /* snowRep = snowReport; */
-            resort.snowReport = snowReport;
-            return (fetch(`https://api.weatherunlocked.com/api/resortforecast/${resort.id}?hourly_interval=6&app_id=754144cc&app_key=108769d13601e41f8dfeb934ee961859`))
-        })
-        .then( (weatherRes) => {
-            if (!weatherRes.ok){
-                throw new Error("Something is wrong fetching weather forecast");
-            }
-            return weatherRes.json();
-        })
-        .then ((weather) => {
-            /* weatherRep = weather */
-            resort.forecast = weather.forecast;
-        })
-        .catch((error) => {console.error("error: ", error) });
-    }
+        resort.snowReport = snowReport;
+        return (fetch(`https://api.weatherunlocked.com/api/resortforecast/${resort.id}?hourly_interval=6&app_id=754144cc&app_key=108769d13601e41f8dfeb934ee961859`))
+    })
+    .then( (weatherRes) => {
+        if (!weatherRes.ok){
+            throw new Error("Something is wrong fetching weather forecast");
+        }
+        return weatherRes.json();
+    })
+    .then ((weather) => {
+        /* weatherRep = weather */
+        resort.forecast = weather.forecast;
+    })
+    .catch((error) => {console.error("error: ", error) });
+
     
     return buildMarker(resort);
     /*return buildMarker(resort, snowRep, weatherRep); */

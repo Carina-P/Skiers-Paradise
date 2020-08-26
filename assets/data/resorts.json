@@ -18,43 +18,16 @@
         "altitudeB": "1 503 m",
         "altitudeT": "3 330 m" ,
         "pists": "412 km",
-        "nrLifts": 67,
-        "snowreport" : {
-            "newsnow" : "20 cm",
-            "lastsnow": "19/05/2020",
-            "conditions": "Great ski conditions",
-            "runs_open": 25
-        },
-        "forecast" : [
-            {},
-            {
-                "date": "19/08/2020",
-                "time": "07:00",
-                "upper" : {
-                    "temp_avg_c": 10,
-                    "windspd_avg_ms": 3,
-                    "wx_desc": "Partly cloudy",
-                    "weather_icon": "PartlyCloudyDay.gif"
-                } 
-            },
-            {
-                "time": "13:00",
-                 "upper" : {
-                    "temp_avg_c": 10,
-                    "windspeed_avg_ms": 3,
-                    "wx_desc": "Sunny",
-                    "wx_icon": "Sunny.gif"
-                }
-            },    
-            {
-                "time": "19:00",
-                "upper" : {
-                    "temp_avg_c": 10,
-                    "windspeed_avg_ms" : 3,
-                    "wx_desc": "Partly cloudy",
-                    "wx_icon": "PartlyCloudyNight.gif"
-                } 
-            }   
-        ]
+        "nrLifts": 67
+   },
+   {
+        "id" : 512001, 
+        "name": "Åre",
+        "info": "Åre is a traditional mountain village where the wide range of skiing, shopping, restaurants and bars creates a real metropolitan pulse.",
+        "position": {"lat": 63.399043, "lng": 13.081506},
+        "altitudeB": "384 m",
+        "altitudeT": "1 274 m" ,
+        "pists": "89",
+        "nrLifts": 41
    }
 ]
